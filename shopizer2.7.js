@@ -1,0 +1,28 @@
+describe('Test of Shopizer', function () {
+    this.beforeAll('Open browser', function () {
+        cy.visit('http://localhost:8080/')
+    })
+    
+    xit('AS a admin I would like to update the Store details', function () {
+        cy.visit('http://localhost:8080/admin/')
+        cy.get('#username').type('admin').should('have.value', 'admin')
+        cy.get('#password').type('password')
+        cy.get('#formSubmitButton').contains('Logon').click()
+        cy.get('.icon-file').click()
+        cy.get('input[id="storename"]').clear().type('VINTAGE@ITHS')
+        cy.get('input[id="storephone"]').clear().type(987654321)
+        cy.get('input[id="storeEmailAddress"]').clear().type('testing.red@yahoo.com')
+        cy.get('input[id="storeaddress"]').clear().type('karlavägen 12,liljeholmen')
+        cy.get('input[id="storecity"]').clear().type('Stockholm')
+        cy.get('select[id="country.isoCode"]').select('Sweden').should('have.value', 'SE')
+        cy.get('input[id="storestateprovince"]').clear().type('Malmö')
+        cy.get('input[id="storepostalcode"]').clear().type(111111)
+        cy.get('select[id="defaultLanguage.id"]').select('en').should('have.value','1')
+        cy.get('select[id="currency.id"]').select('EUR').should('have.value','102')
+        cy.get('input[id="currencyFormatNational1"]').click()
+        cy.get('select[id="weightunitcode"]').select('Kilograms').should('have.value','KG')
+        cy.get('select[id="seizeunitcode"]').select('Centimeters').should('have.value','CM')
+        cy.get('input[id="dateBusinessSince"]').clear().type('2020-04-06').click()
+        cy.get('button').contains('Submit').click()
+    })
+})
