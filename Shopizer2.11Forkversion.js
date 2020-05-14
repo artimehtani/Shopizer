@@ -33,12 +33,12 @@ describe('Test of Shopizer', function () {
         cy.contains('Bags').click()
         cy.get('a[productid=7]').contains('Add to cart').click()
         cy.get('a[onclick="viewShoppingCartPage();"]').contains('Checkout').click({ force: true })
-        cy.get('input[id="306"]').clear()
-        cy.get('input[id="306"]').type(3)
-        cy.get('input[id="305"]').clear()
-        cy.get('input[id="305"]').type(5)
+        cy.get('input[id="359"]').clear()
+        cy.get('input[id="359"]').type(7)
+        cy.get('input[id="360"]').clear()
+        cy.get('input[id="360"]').type(2)
         cy.contains('Recalculate').click()
-        cy.get('a').contains('Proceed to checkout').should('be.visible').click()
+        cy.get('a').contains('Proceed to checkout', { timeout: 10000 }).should('be.visible').click({force:true})
         cy.get('input[id="customer.firstName"]').clear().type("AMAP")
         cy.get('input[id="customer.lastName"]').clear().type("Red")
         cy.get('input[id="customer.billing.company"]').type("Bankrupt")
@@ -51,9 +51,10 @@ describe('Test of Shopizer', function () {
         cy.get('input[id="customer.billing.phone"]').type(1007007)
         cy.get('textarea[id="comments"]').type("Deliver between 1pm to 5pm")
         cy.get('button[id="submitOrder"]').click({ force: true })
+        cy.contains('checkout').should('be.visible')
 
 
 
 
     })
-    })
+})
