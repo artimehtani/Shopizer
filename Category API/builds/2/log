@@ -1,0 +1,97 @@
+Started by user [8mha:////4Gu+7aA5jDkiFfpngZXal1oqojI5ys5EjQGp3hFIbswnAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\Category API
+[Category API] $ cmd /c call C:\Windows\TEMP\jenkins3325470206978598789.bat
+
+C:\Program Files (x86)\Jenkins\workspace\Category API>cd C:\Users\Arti Mehtani\AppData\Roaming\npm 
+
+C:\Users\Arti Mehtani\AppData\Roaming\npm>newman run https://www.getpostman.com/collections/dd6ba17dd2bb490ed018 
+newman
+
+Category management resource (Category Management Api) Category Api
+
+→ Get category hierarchy from root.
+  POST http://localhost:8080/api/v1/private/login [200 OK, 862B, 112ms]
+  GET http://localhost:8080/api/v1/category [200 OK, 2.51KB, 17ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+  √  Body matches string
+  √  Body matches string
+
+→  Get category list for an given Category id
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 11ms]
+  GET http://localhost:8080/api/v1/category/2 [200 OK, 725B, 16ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+  √  Body matches string
+  √  Your test name
+
+→ create a category
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 16ms]
+  POST http://localhost:8080/api/v1/private/category [201 Created, 882B, 33ms]
+  √  Status code is 201
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Your test name
+  √  Successful POST request
+  √  Status code name has string
+
+→ Update the store
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 22ms]
+  PUT http://localhost:8080/api/v1/private/category/70 [200 OK, 899B, 67ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Your test name
+
+→ Delete the category
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 12ms]
+  DELETE http://localhost:8080/api/v1/private/category/70 [200 OK, 520B, 23ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+
+→ Move a category under another category
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 11ms]
+  PUT http://localhost:8080/api/v1/private/category/1/move/4 [200 OK, 520B, 11ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+
+→ Update visible
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 13ms]
+  PATCH http://localhost:8080/api/v1/private/category/57/visible [200 OK, 520B, 13ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+
+→  Check if category code already exists
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 8ms]
+  GET http://localhost:8080/api/v1/private/category/unique?code=Makeup2 [200 OK, 576B, 11ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+  √  Code exists check
+
+┌─────────────────────────┬───────────────────┬──────────────────┐
+│                         │          executed │           failed │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              iterations │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│                requests │                16 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│            test-scripts │                16 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│      prerequest-scripts │                 8 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              assertions │                33 │                0 │
+├─────────────────────────┴───────────────────┴──────────────────┤
+│ total run duration: 1157ms                                     │
+├────────────────────────────────────────────────────────────────┤
+│ total data received: 4.9KB (approx)                            │
+├────────────────────────────────────────────────────────────────┤
+│ average response time: 24ms [min: 8ms, max: 112ms, s.d.: 26ms] │
+└────────────────────────────────────────────────────────────────┘
+Finished: SUCCESS
