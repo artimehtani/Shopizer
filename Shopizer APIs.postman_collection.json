@@ -1,0 +1,2294 @@
+{
+	"info": {
+		"_postman_id": "2a5d6266-b8d2-46f7-95b1-5b161fafc6e6",
+		"name": "Shopizer APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Category Mangament Api",
+			"item": [
+				{
+					"name": "Get category hierarchy from root.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b2149b55-db06-4388-9b2b-1a25250d2fe9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"name\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " Get category list for an given Category id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6b3a0623-d156-40a4-bc9a-02741b1a501a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.description.name).to.eql(\"Handbags\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9347ebe8-b09b-48f3-ad51-fc52bdd91094",
+								"exec": [
+									"",
+									"    var jsonData = pm.response.json();",
+									"  ",
+									"pm.globals.set(\"Category_id\", jsonData.id);",
+									"",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"Sleeping\");",
+									"});",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"Created\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"children\": [\r\n  \r\n  ],\r\n  \"code\": \"Sleeping\",\r\n  \"depth\": 0,\r\n  \"descriptions\": [\r\n    {\r\n      \"description\": \"rest\",\r\n      \"friendlyUrl\": \"string\",\r\n      \"highlights\": \"string\",\r\n      \"id\": 10,\r\n      \"keyWords\": \"string\",\r\n      \"language\": \"en\",\r\n      \"metaDescription\": \"string\",\r\n      \"name\": \"Sleep\",\r\n      \"title\": \"Sov gott\"\r\n    }\r\n  ],\r\n  \"sortOrder\": 0,\r\n  \"visible\": true\r\n}\r\n\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update the store",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c82164f4-b024-444b-bca2-e99f8394a2d0",
+								"exec": [
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SleepingSound\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"children\": [\r\n   \r\n  ],\r\n  \"code\": \"SleepingSound\",\r\n  \"depth\": 0,\r\n  \"descriptions\": [\r\n    {\r\n      \"description\": \"string\",\r\n      \"friendlyUrl\": \"string\",\r\n      \"highlights\": \"string\",\r\n     \r\n    \"keyWords\": \"string\",\r\n      \"language\": \"string\",\r\n      \"metaDescription\": \"string\",\r\n      \"name\": \"sleeping Beauty\",\r\n      \"title\": \"Good Night\"\r\n    }\r\n  ],\r\n  \r\n  \"sortOrder\": 0,\r\n  \"visible\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/category/{{Category_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"category",
+								"{{Category_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "775a9a77-5463-47da-b804-ba77bfaff4ae",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/category/{{Category_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"category",
+								"{{Category_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Move a category under another category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "79eda3b9-ac47-4a1f-882d-b70a049e7214",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/category/1/move/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"category",
+								"1",
+								"move",
+								"4"
+							],
+							"query": [
+								{
+									"key": "Parent",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update visible",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7289827e-8fe8-475e-be4c-63b7b90a4aed",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"children\": [\r\n   \r\n  ],\r\n  \"code\": \"Makeup2\",\r\n  \"depth\": 0,\r\n  \"descriptions\": [\r\n    \r\n  ],\r\n  \r\n  \"sortOrder\": 0,\r\n  \"visible\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/category/57/visible",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"category",
+								"57",
+								"visible"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " Check if category code already exists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7c1bae4-0ae7-4455-9474-02d23d8daae2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Code exists check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.exists).to.eql(true);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/category/unique?code=Makeup2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"category",
+								"unique"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "Makeup2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Merchant Store APi",
+			"item": [
+				{
+					"name": "Get the created marketing detailsfor store",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "77d5fbc7-f5f5-4463-a689-ea767a440f9e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.socialNetworks[0].type).to.eql(\"SOCIAL\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/store/NVD/marketing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"store",
+								"NVD",
+								"marketing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create or save store branding and marketing details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b9f1ea3e-4aaf-409a-97f5-e6c054b6476f",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"Created\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+									"});",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"socialNetworks\": [\r\n    {\r\n      \"active\": true,\r\n      \"id\": 0,\r\n      \"key\": \"string\",\r\n      \"type\": \"INTEGRATION\",\r\n      \"value\": \"string\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/store/NVD/marketing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"store",
+								"NVD",
+								"marketing"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get store branding and marketing details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c933d29c-0490-462b-89b8-dff7e8e3a084",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.socialNetworks[0].type).to.eql(\"SOCIAL\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/store/DEFAULT/marketing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"store",
+								"DEFAULT",
+								"marketing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a store",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "08039cb4-dd12-45f5-9be4-2f7311810b68",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Check the value of code\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"TAAAR_RED\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n           \r\n            \r\n            \"name\": \"RedIths_Tester\",\r\n            \"defaultLanguage\": \"en\",\r\n            \"currency\": \"SEK\",\r\n            \"inBusinessSince\": \"2020-05-02\",\r\n            \"email\": \"red@shopizer.com\",\r\n            \"phone\": \"999999\",\r\n            \"template\": null,\r\n            \"useCache\": false,\r\n            \"currencyFormatNational\": false,\r\n            \"retailer\": false,\r\n            \"dimension\": \"IN\",\r\n            \"weight\": \"KG\",\r\n            \"currentUserLanguage\": null,\r\n            \"address\": {\r\n                \"stateProvince\": \"Stad\",\r\n                \"country\": \"SE\",\r\n                \"address\": \"T-centrelen\",\r\n                \"postalCode\": \"11111\",\r\n                \"city\": \"Stockholm\"\r\n            }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/store/{{store_code}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"store",
+								"{{store_code}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all the stores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a94d4a4b-774e-42d5-8645-725e20799322",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Check the value of Code\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data[0].code).to.eql(\"DEFAULT\");",
+									"});",
+									"pm.test(\"Check the value of name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data[0].name).to.eql(\"MY_SHOPIZER\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "949031bc-3224-4270-b20a-3e293c87a45b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/stores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"stores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a store",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c89eac88-64c3-474d-ac5f-70232d8925d3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"});",
+									"pm.test(\"Check the value in response \", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.address.city).to.eql(\"Stockholm\");",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"var jsonData = pm.response.json();",
+									"pm.globals.set(\"store_code\",jsonData.code);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n           \r\n           \"code\": \"TAAAR_RED\",\r\n            \"name\": \"testered@VINTAGE\",\r\n            \"defaultLanguage\": \"en\",\r\n            \"currency\": \"SEK\",\r\n            \"inBusinessSince\": \"2020-05-02\",\r\n            \"email\": \"iths3@shopizer.com\",\r\n            \"phone\": \"999999\",\r\n            \"template\": null,\r\n            \"useCache\": false,\r\n            \"currencyFormatNational\": false,\r\n            \"retailer\": false,\r\n            \"dimension\": \"IN\",\r\n            \"weight\": \"KG\",\r\n            \"currentUserLanguage\": null,\r\n            \"address\": {\r\n                \"stateProvince\": \"hägersten\",\r\n                \"country\": \"SE\",\r\n                \"address\": \"liljeholmen\",\r\n                \"postalCode\": \"11111\",\r\n                \"city\": \"Stockholm\"\r\n            }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/store",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check if store code already exists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d978e49e-4e6d-4c56-a2bc-d48dbd85a7af",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"exists\");",
+									"});",
+									"pm.test(\"Check if store exists\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.exists).to.eql(true);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/store/unique?code={{store_code}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"store",
+								"unique"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "{{store_code}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get merchant store by code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f9dee44b-c2ca-4700-9169-c576abbc9edc",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Check the value of code\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"TAAAR_RED\");",
+									"});",
+									"pm.test(\"Check admin name in response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.readableAudit.user).to.eql(\"admin@shopizer.com\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/store/{{store_code}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"store",
+								"{{store_code}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes a store by code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "de7fbd2f-a51f-4aec-8fb5-5876f205807d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/store/{{store_code}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"store",
+								"{{store_code}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletes the logo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e144981-c221-4fb5-a6b9-884e738ca465",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/store/DEFAULT/marketing/logo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"store",
+								"DEFAULT",
+								"marketing",
+								"logo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create the store logo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fc2221e2-f8c0-4013-ac11-92f73549f44c",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Arti Mehtani/Desktop/chanel.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/store/DEFAULT/marketing/logo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"store",
+								"DEFAULT",
+								"marketing",
+								"logo"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " Get list of store names. Returns all retailers and stores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "46f5e499-57f5-42f9-ac86-85a03fe375d9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Check value of code in response array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[0].code).to.eql(\"DEFAULT\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/stores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"stores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get merchant retailer stores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2761e7f6-cd53-418a-ba29-2ef1b4ab6fda",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"data\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/merchant/NEWDEFAULT/stores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"merchant",
+								"NEWDEFAULT",
+								"stores"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Manufacture Api",
+			"item": [
+				{
+					"name": "Get manufacturer by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dfa84692-53ee-416d-a8ea-d3d5253fea11",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Check the name of manufacturer in response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.description.name).to.eql(\"ITHS\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/manufacturers/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"manufacturers",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all manufacturers for all items in a given category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4fb896b2-59db-4b84-9c37-9f4f02d6d492",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[0].code).to.eql(\"chic\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category/4/manufacturers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"4",
+								"manufacturers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Manufacturers by store",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f9e37467-b8ae-469c-a236-707794ac3435",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"name\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/manufacturers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"manufacturers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a manufacturer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "accb6b53-22d6-4e8b-b016-7f5a5c651fe2",
+								"exec": [
+									"   var jsonData = pm.response.json();",
+									"    pm.globals.set(\"manufacturer_id\",jsonData.id);",
+									"    ",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"Created\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"Party\",\r\n  \"descriptions\": [\r\n    {\r\n      \"description\": \"Have Fun\",\r\n      \"friendlyUrl\": \"fest\",\r\n      \"highlights\": \"string\",\r\n      \"id\": 0,\r\n      \"keyWords\": \"hipHop\",\r\n      \"language\": \"en\",\r\n      \"metaDescription\": \"string\",\r\n      \"name\": \"PartyTime\",\r\n      \"title\": \"Enjoy\"\r\n    }\r\n  ],\r\n  \"id\": 0,\r\n  \"order\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/manufacturer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"manufacturer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update the manufacture by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f62bace9-3475-44ce-9c8a-ae423c00fae8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"PartyFest\",\r\n  \"descriptions\": [\r\n    {\r\n      \"description\": \"Have Fun\",\r\n      \"friendlyUrl\": \"fest\",\r\n      \"highlights\": \"string\",\r\n      \"id\": 0,\r\n      \"keyWords\": \"hipHop\",\r\n      \"language\": \"en\",\r\n      \"metaDescription\": \"string\",\r\n      \"name\": \"Party\",\r\n      \"title\": \"Enjoy\"\r\n    }\r\n  ],\r\n  \"id\": 0,\r\n  \"order\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/manufacturer/{{manufacturer_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"manufacturer",
+								"{{manufacturer_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the manufacturer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2c8bfe08-8856-48f2-be6d-da96157c349b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/manufacturer/{{manufacturer_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"manufacturer",
+								"{{manufacturer_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check if manufacturer already exists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4689a6f2-ae83-4920-bc14-32375debe73f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.exists).to.eql(true);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/manufacturer/unique?code=ITHögskola",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"manufacturer",
+								"unique"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "ITHögskola"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User Authentication",
+			"item": [
+				{
+					"name": "Authenticate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "909b5e45-54c9-42ca-b767-05473b74b60e",
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.environment.set(\"tokenShopizer\", jsonData.token);",
+									"    ",
+									"   "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"password\",\r\n  \"username\": \"admin@shopizer.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/private/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "Get an existing user info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer{{tokenValue}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/private/users/54",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"users",
+								"54"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8bcd2f11-4e5c-4fc9-8d0d-c9080c174e21",
+								"exec": [
+									"  var jsonData = pm.response.json();",
+									"   pm.globals.set(\"user_id\",jsonData.id);",
+									"pm.test(\"Response body has string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Check the expected firstname\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.value.firstName).to.eql('Daniel');",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.groups[0].name).to.eql(\"ADMIN\");",
+									"});",
+									"pm.test(\"Response body must contain\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"groups\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer{{tokenShopizer}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"firstName\": \"Daniel\",\r\n  \"lastName\": \"Kamra\",\r\n  \"emailAddress\": \"kamra.admin@shopizer.com\",\r\n  \"userName\": \"Daniel\",\r\n  \"defaultLanguage\": \"en\",\r\n  \"active\": true,\r\n\r\n  \"loginTime\": null,\r\n  \"merchant\": \"DEFAULT\",\r\n  \"permissions\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"STORE_ADMIN\"\r\n    },\r\n    {\r\n      \"id\": 3,\r\n      \"name\": \"ADMIN\"\r\n    },\r\n    {\r\n      \"id\": 4,\r\n      \"name\": \"AUTH\"\r\n    },\r\n    {\r\n      \"id\": 5,\r\n      \"name\": \"PRODUCTS\"\r\n    },\r\n    {\r\n      \"id\": 6,\r\n      \"name\": \"ORDER\"\r\n    },\r\n    {\r\n      \"id\": 7,\r\n      \"name\": \"CONTENT\"\r\n    },\r\n    {\r\n      \"id\": 8,\r\n      \"name\": \"STORE\"\r\n    },\r\n    {\r\n      \"id\": 9,\r\n      \"name\": \"TAX\"\r\n    },\r\n    {\r\n      \"id\": 10,\r\n      \"name\": \"PAYMENT\"\r\n    },\r\n    {\r\n      \"id\": 11,\r\n      \"name\": \"CUSTOMER\"\r\n    },\r\n    {\r\n      \"id\": 12,\r\n      \"name\": \"SHIPPING\"\r\n    }\r\n  ],\r\n  \"groups\": [\r\n    {\r\n      \"name\": \"ADMIN\",\r\n      \"id\": 2\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/private/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update the details of created use",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer{{tokenShopizer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Maana\",\r\n  \"lastName\": \"John\",\r\n  \"emailAddress\": \"manna.admin@shopizer.com\",\r\n  \"userName\": \"MJ\",\r\n  \"defaultLanguage\": \"en\",\r\n  \"active\": true,\r\n\r\n  \"loginTime\": null,\r\n  \"merchant\": \"DEFAULT\",\r\n  \"permissions\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"STORE_ADMIN\"\r\n    },\r\n    {\r\n      \"id\": 3,\r\n      \"name\": \"ADMIN\"\r\n    },\r\n    {\r\n      \"id\": 4,\r\n      \"name\": \"AUTH\"\r\n    },\r\n    {\r\n      \"id\": 5,\r\n      \"name\": \"PRODUCTS\"\r\n    },\r\n    {\r\n      \"id\": 6,\r\n      \"name\": \"ORDER\"\r\n    },\r\n    {\r\n      \"id\": 7,\r\n      \"name\": \"CONTENT\"\r\n    },\r\n    {\r\n      \"id\": 8,\r\n      \"name\": \"STORE\"\r\n    },\r\n    {\r\n      \"id\": 9,\r\n      \"name\": \"TAX\"\r\n    },\r\n    {\r\n      \"id\": 10,\r\n      \"name\": \"PAYMENT\"\r\n    },\r\n    {\r\n      \"id\": 11,\r\n      \"name\": \"CUSTOMER\"\r\n    },\r\n    {\r\n      \"id\": 12,\r\n      \"name\": \"SHIPPING\"\r\n    }\r\n  ],\r\n  \"groups\": [\r\n    {\r\n      \"name\": \"ADMIN\",\r\n      \"id\": 2\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/private/user/{{user_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"user",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get list of existing users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer{{tokenShopizer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/private/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updates  auser password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer{{tokenShopizer}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\r\n\"changePassword\":\"finallychanged\",\r\n\"password\":\"postmanfinal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/private/user/69/password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"user",
+								"69",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Auth User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/private/user/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check if username alredy exists",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer{{tokenShopizer}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"merchant\": \"DEFAULT\",\r\n  \"unique\": \"Kicky\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/private/user/unique",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"user",
+								"unique"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Customer Api",
+			"item": [
+				{
+					"name": "get customer by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "421ddc73-f9c5-4e3c-8884-ae4f544cf1a8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Response body expected to have firstname for the given id\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"firstName\");",
+									"});",
+									"pm.test(\"Check the value of email address in response body\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.emailAddress).to.eql(\"modi@modi.com\");",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.billing.country).to.eql(\"IN\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true,
+							"user-agent": true,
+							"accept-encoding": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/private/customer/101\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"customer",
+								"101\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "839bbd7f-1b0b-48d8-a376-adf5f5b93e3c",
+								"exec": [
+									"",
+									" var jsonData = pm.response.json();",
+									"pm.globals.set(\"customer_id\", jsonData.id);",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Check the value of firstName\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.billing.firstName).to.eql(\"Ammi4\");",
+									"});",
+									"pm.test(\"Check the value of firstname in delivery\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.delivery.firstName).to.eql(\"AAART\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"emailAddress\": \"ammi4.tester@yahoo.com\",\r\n    \"billing\": {\r\n        \"postalCode\": \"222\",\r\n        \"countryCode\": null,\r\n        \"firstName\": \"Ammi4\",\r\n        \"lastName\": \"Redteam\",\r\n        \"bilstateOther\": null,\r\n        \"company\": \"ITHS\",\r\n        \"phone\": \"77777700\",\r\n        \"address\": \"liljeholmen\",\r\n        \"city\": \"Mumbai\",\r\n        \"stateProvince\": null,\r\n        \"billingAddress\": false,\r\n        \"latitude\": null,\r\n        \"longitude\": null,\r\n        \"zone\": \"QC\",\r\n        \"country\": \"CA\"\r\n    },\r\n    \"delivery\": {\r\n        \"postalCode\": \"8888\",\r\n        \"countryCode\": null,\r\n        \"firstName\": \"AAART\",\r\n        \"lastName\": \"Redteam\",\r\n        \"bilstateOther\": null,\r\n        \"company\": \"\",\r\n        \"phone\": \"777777\",\r\n        \"address\": \"liljeholmen\",\r\n        \"city\": \"Mumbai\",\r\n        \"stateProvince\": null,\r\n        \"billingAddress\": false,\r\n        \"latitude\": null,\r\n        \"longitude\": null,\r\n        \"zone\": \"QC\",\r\n        \"country\": \"CA\"\r\n    },\r\n    \"gender\": null,\r\n    \"language\": null,\r\n    \"firstName\": \"AAART\",\r\n    \"lastName\": \"Redteam\",\r\n    \"provider\": null,\r\n    \"storeCode\": null,\r\n    \"userName\": null,\r\n    \"rating\": 0.0,\r\n    \"ratingCount\": 0,\r\n    \"attributes\": [],\r\n    \"groups\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/private/customer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updates a customer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "058cf5b8-ed76-4d61-83c9-a4d547804273",
+								"exec": [
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Check the value of firstName\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.billing.firstName).to.eql(\"ABCD\");",
+									"});",
+									"pm.test(\"Check the value of firstname in delivery\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.delivery.firstName).to.eql(\"AAART\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"emailAddress\": \"ammi5.tester@yahoo.com\",\r\n    \"billing\": {\r\n        \"postalCode\": \"222\",\r\n        \"countryCode\": null,\r\n        \"firstName\": \"Ammi5\",\r\n        \"lastName\": \"Redteam\",\r\n        \"bilstateOther\": null,\r\n        \"company\": \"ITHS\",\r\n        \"phone\": \"77777700\",\r\n        \"address\": \"liljeholmen\",\r\n        \"city\": \"Mumbai\",\r\n        \"stateProvince\": null,\r\n        \"billingAddress\": false,\r\n        \"latitude\": null,\r\n        \"longitude\": null,\r\n        \"zone\": \"QC\",\r\n        \"country\": \"CA\"\r\n    },\r\n    \"delivery\": {\r\n        \"postalCode\": \"8888\",\r\n        \"countryCode\": null,\r\n        \"firstName\": \"AAART\",\r\n        \"lastName\": \"Redteam\",\r\n        \"bilstateOther\": null,\r\n        \"company\": \"\",\r\n        \"phone\": \"777777\",\r\n        \"address\": \"liljeholmen\",\r\n        \"city\": \"Mumbai\",\r\n        \"stateProvince\": null,\r\n        \"billingAddress\": false,\r\n        \"latitude\": null,\r\n        \"longitude\": null,\r\n        \"zone\": \"QC\",\r\n        \"country\": \"CA\"\r\n    },\r\n    \"gender\": null,\r\n    \"language\": null,\r\n    \"firstName\": \"AAART\",\r\n    \"lastName\": \"Redteam\",\r\n    \"provider\": null,\r\n    \"storeCode\": null,\r\n    \"userName\": null,\r\n    \"rating\": 0.0,\r\n    \"ratingCount\": 0,\r\n    \"attributes\": [],\r\n    \"groups\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/private/customer/{{customer_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"customer",
+								"{{customer_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleting the customer id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/private/customer/{{customer_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"customer",
+								"{{customer_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get filtered customers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "72fda23d-1f50-413a-b54b-69fc6182ba1e",
+								"exec": [
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Check the value of firstName\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.customers[0].billing.firstName).to.eql(\"John\");",
+									"});",
+									"pm.test(\"Check the value of email address in response array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.customers[2].emailAddress).to.eql(\"aaart.tester@yahoo.com\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenShopizer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/private/customers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updates a logged in customer",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d5fa9d5b-08d7-4c79-8905-137afc9fb8d0",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenShopizer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer{{customertoken}}",
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman."
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/customer/51",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"customer",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get authorised user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Proxy-Authorization",
+								"value": "Bearer{{customertoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/private/customer/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"customer",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate customer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3de0cae1-799c-4178-8f71-9bd12fcefafb",
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.globals.set(\"customertoken\", jsonData.token);",
+									"  ",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Response body contains string id\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"});  ",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/customer/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get merchant child",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "15852970-8e00-417d-a0b6-16cb5ea65774",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"number\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/private/merchant/NEWDEFAULT/children",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"private",
+								"merchant",
+								"NEWDEFAULT",
+								"children"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
