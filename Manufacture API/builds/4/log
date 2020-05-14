@@ -1,0 +1,86 @@
+Started by timer
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\Manufacture API
+[Manufacture API] $ cmd /c call C:\Windows\TEMP\jenkins529345760076126164.bat
+
+C:\Program Files (x86)\Jenkins\workspace\Manufacture API>cd C:\Users\Arti Mehtani\AppData\Roaming\npm 
+
+C:\Users\Arti Mehtani\AppData\Roaming\npm>newman run https://www.getpostman.com/collections/9c53526ec4e3abea1b88 
+newman
+
+Manufacture API
+
+→ Get all manufacturers for all items in a given category
+  POST http://localhost:8080/api/v1/private/login [200 OK, 862B, 284ms]
+  GET http://localhost:8080/api/v1/category/4/manufacturers [200 OK, 770B, 32ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Your test name
+
+→ List Manufacturers by store
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 80ms]
+  GET http://localhost:8080/api/v1/manufacturers/ [200 OK, 2.03KB, 23ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Body matches string
+
+→ Get manufacturer by id
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 20ms]
+  GET http://localhost:8080/api/v1/manufacturers/100 [200 OK, 584B, 16ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Check the name of manufacturer in response data
+
+→ Create a manufacturer
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 17ms]
+  POST http://localhost:8080/api/v1/private/manufacturer [201 Created, 793B, 21ms]
+  √  Status code is 201
+  √  Successful POST request
+  √  Status code name has string
+  √  Body matches string
+
+→ Update the manufacture by id
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 15ms]
+  PUT http://localhost:8080/api/v1/private/manufacturer/155 [200 OK, 520B, 36ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+
+→ Delete the manufacturer
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 17ms]
+  DELETE http://localhost:8080/api/v1/manufacturer/155 [200 OK, 338B, 13ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+
+→ check if manufacturer already exists
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 20ms]
+  GET http://localhost:8080/api/v1/private/manufacturer/unique?code=ITHögskola [200 OK, 576B, 81ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+  √  Your test name
+
+┌─────────────────────────┬───────────────────┬───────────────────┐
+│                         │          executed │            failed │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              iterations │                 1 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│                requests │                14 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│            test-scripts │                14 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│      prerequest-scripts │                 7 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              assertions │                26 │                 0 │
+├─────────────────────────┴───────────────────┴───────────────────┤
+│ total run duration: 1965ms                                      │
+├─────────────────────────────────────────────────────────────────┤
+│ total data received: 4.02KB (approx)                            │
+├─────────────────────────────────────────────────────────────────┤
+│ average response time: 48ms [min: 13ms, max: 284ms, s.d.: 68ms] │
+└─────────────────────────────────────────────────────────────────┘
+Finished: SUCCESS

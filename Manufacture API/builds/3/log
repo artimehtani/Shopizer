@@ -1,0 +1,94 @@
+Started by user [8mha:////4Gu+7aA5jDkiFfpngZXal1oqojI5ys5EjQGp3hFIbswnAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\Manufacture API
+[Manufacture API] $ cmd /c call C:\Windows\TEMP\jenkins1765686967753520144.bat
+
+C:\Program Files (x86)\Jenkins\workspace\Manufacture API>cd C:\Users\Arti Mehtani\AppData\Roaming\npm 
+
+C:\Users\Arti Mehtani\AppData\Roaming\npm>newman run https://www.getpostman.com/collections/9c53526ec4e3abea1b88 
+newman
+
+Manufacture API
+
+→ Get all manufacturers for all items in a given category
+  POST http://localhost:8080/api/v1/private/login [200 OK, 862B, 1346ms]
+  GET http://localhost:8080/api/v1/category/4/manufacturers [200 OK, 770B, 642ms]
+  √  Status code is 200
+  1. Response time is less than 200ms
+  √  Body matches string
+  √  Your test name
+
+→ List Manufacturers by store
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 16ms]
+  GET http://localhost:8080/api/v1/manufacturers/ [200 OK, 2.03KB, 64ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Body matches string
+
+→ Get manufacturer by id
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 18ms]
+  GET http://localhost:8080/api/v1/manufacturers/100 [200 OK, 584B, 19ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Check the name of manufacturer in response data
+
+→ Create a manufacturer
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 13ms]
+  POST http://localhost:8080/api/v1/private/manufacturer [201 Created, 793B, 189ms]
+  √  Status code is 201
+  √  Successful POST request
+  √  Status code name has string
+  √  Body matches string
+
+→ Update the manufacture by id
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 21ms]
+  PUT http://localhost:8080/api/v1/private/manufacturer/154 [200 OK, 520B, 57ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+
+→ Delete the manufacturer
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 17ms]
+  DELETE http://localhost:8080/api/v1/manufacturer/154 [200 OK, 338B, 34ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+
+→ check if manufacturer already exists
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 12ms]
+  GET http://localhost:8080/api/v1/private/manufacturer/unique?code=ITHögskola [200 OK, 576B, 34ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+  √  Your test name
+
+┌─────────────────────────┬─────────────────────┬────────────────────┐
+│                         │            executed │             failed │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              iterations │                   1 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│                requests │                  14 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│            test-scripts │                  14 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│      prerequest-scripts │                   7 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              assertions │                  26 │                  1 │
+├─────────────────────────┴─────────────────────┴────────────────────┤
+│ total run duration: 3.2s                                           │
+├────────────────────────────────────────────────────────────────────┤
+│ total data received: 4.02KB (approx)                               │
+├────────────────────────────────────────────────────────────────────┤
+│ average response time: 177ms [min: 12ms, max: 1346ms, s.d.: 361ms] │
+└────────────────────────────────────────────────────────────────────┘
+
+  #  failure         detail                                                           
+                                                                                      
+ 1.  AssertionError  Response time is less than 200ms                                 
+                     expected 642 to be below 200                                     
+                     at assertion:1 in test-script                                    
+                     inside "Get all manufacturers for all items in a given category" 
+Build step 'Execute Windows batch command' marked build as failure
+Finished: FAILURE

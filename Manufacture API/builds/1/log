@@ -1,0 +1,243 @@
+Started by user [8mha:////4Gu+7aA5jDkiFfpngZXal1oqojI5ys5EjQGp3hFIbswnAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\Manufacture API
+[Manufacture API] $ cmd /c call C:\Windows\TEMP\jenkins3270699359843781085.bat
+
+C:\Program Files (x86)\Jenkins\workspace\Manufacture API>cd C:\Users\Arti Mehtani\AppData\Roaming\npm 
+
+C:\Users\Arti Mehtani\AppData\Roaming\npm>newman run https://www.getpostman.com/collections/9c53526ec4e3abea1b88 
+newman
+
+Manufacture API
+
+→ Get all manufacturers for all items in a given category
+  POST http://localhost:8080/api/v1/private/login [200 OK, 862B, 98ms]
+  GET {{url}}/api/v1/category/4/manufacturers [errored]
+     getaddrinfo ENOTFOUND {{url}}
+  2. Status code is 200
+  3. Response time is less than 200ms
+  4. Body matches string
+  5. Your test name
+
+→ List Manufacturers by store
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 12ms]
+  GET {{url}}/api/v1/manufacturers/ [errored]
+     getaddrinfo ENOTFOUND {{url}}
+  7. Status code is 200
+  8. Response time is less than 200ms
+  9. Body matches string
+ 10. Body matches string
+
+→ Get manufacturer by id
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 15ms]
+  GET {{url}}/api/v1/manufacturers/100 [errored]
+     getaddrinfo ENOTFOUND {{url}}
+ 12. Status code is 200
+ 13. Response time is less than 200ms
+ 14. Body matches string
+ 15. Check the name of manufacturer in response data
+
+→ Create a manufacturer
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 14ms]
+  POST {{url}}/api/v1/private/manufacturer [errored]
+     getaddrinfo ENOTFOUND {{url}}
+ 17⠄ JSONError in test-script
+
+→ Update the manufacture by id
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 15ms]
+  PUT {{url}}/api/v1/private/manufacturer/{{manufacturer_id}} [errored]
+     getaddrinfo ENOTFOUND {{url}}
+ 19. Status code is 200
+ 20. Response time is less than 200ms
+ 21. Status code name has string
+
+→ Delete the manufacturer
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 13ms]
+  DELETE {{url}}/api/v1/manufacturer/{{manufacturer_id}} [errored]
+     getaddrinfo ENOTFOUND {{url}}
+ 23. Status code is 200
+ 24. Response time is less than 200ms
+ 25. Status code name has string
+
+→ check if manufacturer already exists
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 13ms]
+  GET {{url}}/api/v1/private/manufacturer/unique?code=ITHögskola [errored]
+     getaddrinfo ENOTFOUND {{url}}
+ 27. Status code is 200
+ 28. Response time is less than 200ms
+ 29. Status code name has string
+ 30. Your test name
+
+┌─────────────────────────┬───────────────────┬──────────────────┐
+│                         │          executed │           failed │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              iterations │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│                requests │                14 │                7 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│            test-scripts │                14 │                1 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│      prerequest-scripts │                 7 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              assertions │                22 │               22 │
+├─────────────────────────┴───────────────────┴──────────────────┤
+│ total run duration: 678ms                                      │
+├────────────────────────────────────────────────────────────────┤
+│ total data received: 1.54KB (approx)                           │
+├────────────────────────────────────────────────────────────────┤
+│ average response time: 42ms [min: 12ms, max: 98ms, s.d.: 40ms] │
+└────────────────────────────────────────────────────────────────┘
+
+   #  failure         detail                                                                                               
+                                                                                                                           
+ 01.  Error                                                                                                                
+                      getaddrinfo ENOTFOUND {{url}}                                                                        
+                      at request                                                                                           
+                      inside "Get all manufacturers for all items in a given category"                                     
+                                                                                                                           
+ 02.  AssertionError  Status code is 200                                                                                   
+                      expected { Object (id, _details, ...) } to have property 'code'                                      
+                      at assertion:0 in test-script                                                                        
+                      inside "Get all manufacturers for all items in a given category"                                     
+                                                                                                                           
+ 03.  AssertionError  Response time is less than 200ms                                                                     
+                      expected undefined to be a number or a date                                                          
+                      at assertion:1 in test-script                                                                        
+                      inside "Get all manufacturers for all items in a given category"                                     
+                                                                                                                           
+ 04.  AssertionError  Body matches string                                                                                  
+                      object tested must be an array, a map, an object, a set, a string, or a weakset, but undefined given 
+                      at assertion:2 in test-script                                                                        
+                      inside "Get all manufacturers for all items in a given category"                                     
+                                                                                                                           
+ 05.  JSONError       Your test name                                                                                       
+                      Unexpected token u in JSON at position 0                                                             
+                      at assertion:3 in test-script                                                                        
+                      inside "Get all manufacturers for all items in a given category"                                     
+                                                                                                                           
+ 06.  Error                                                                                                                
+                      getaddrinfo ENOTFOUND {{url}}                                                                        
+                      at request                                                                                           
+                      inside "List Manufacturers by store"                                                                 
+                                                                                                                           
+ 07.  AssertionError  Status code is 200                                                                                   
+                      expected { Object (id, _details, ...) } to have property 'code'                                      
+                      at assertion:0 in test-script                                                                        
+                      inside "List Manufacturers by store"                                                                 
+                                                                                                                           
+ 08.  AssertionError  Response time is less than 200ms                                                                     
+                      expected undefined to be a number or a date                                                          
+                      at assertion:1 in test-script                                                                        
+                      inside "List Manufacturers by store"                                                                 
+                                                                                                                           
+ 09.  AssertionError  Body matches string                                                                                  
+                      object tested must be an array, a map, an object, a set, a string, or a weakset, but undefined given 
+                      at assertion:2 in test-script                                                                        
+                      inside "List Manufacturers by store"                                                                 
+                                                                                                                           
+ 10.  AssertionError  Body matches string                                                                                  
+                      object tested must be an array, a map, an object, a set, a string, or a weakset, but undefined given 
+                      at assertion:3 in test-script                                                                        
+                      inside "List Manufacturers by store"                                                                 
+                                                                                                                           
+ 11.  Error                                                                                                                
+                      getaddrinfo ENOTFOUND {{url}}                                                                        
+                      at request                                                                                           
+                      inside "Get manufacturer by id"                                                                      
+                                                                                                                           
+ 12.  AssertionError  Status code is 200                                                                                   
+                      expected { Object (id, _details, ...) } to have property 'code'                                      
+                      at assertion:0 in test-script                                                                        
+                      inside "Get manufacturer by id"                                                                      
+                                                                                                                           
+ 13.  AssertionError  Response time is less than 200ms                                                                     
+                      expected undefined to be a number or a date                                                          
+                      at assertion:1 in test-script                                                                        
+                      inside "Get manufacturer by id"                                                                      
+                                                                                                                           
+ 14.  AssertionError  Body matches string                                                                                  
+                      object tested must be an array, a map, an object, a set, a string, or a weakset, but undefined given 
+                      at assertion:2 in test-script                                                                        
+                      inside "Get manufacturer by id"                                                                      
+                                                                                                                           
+ 15.  JSONError       Check the name of manufacturer in response data                                                      
+                      Unexpected token u in JSON at position 0                                                             
+                      at assertion:3 in test-script                                                                        
+                      inside "Get manufacturer by id"                                                                      
+                                                                                                                           
+ 16.  Error                                                                                                                
+                      getaddrinfo ENOTFOUND {{url}}                                                                        
+                      at request                                                                                           
+                      inside "Create a manufacturer"                                                                       
+                                                                                                                           
+ 17.  JSONError                                                                                                            
+                      Unexpected token u in JSON at position 0                                                             
+                      at test-script                                                                                       
+                      inside "Create a manufacturer"                                                                       
+                                                                                                                           
+ 18.  Error                                                                                                                
+                      getaddrinfo ENOTFOUND {{url}}                                                                        
+                      at request                                                                                           
+                      inside "Update the manufacture by id"                                                                
+                                                                                                                           
+ 19.  AssertionError  Status code is 200                                                                                   
+                      expected { Object (id, _details, ...) } to have property 'code'                                      
+                      at assertion:0 in test-script                                                                        
+                      inside "Update the manufacture by id"                                                                
+                                                                                                                           
+ 20.  AssertionError  Response time is less than 200ms                                                                     
+                      expected undefined to be a number or a date                                                          
+                      at assertion:1 in test-script                                                                        
+                      inside "Update the manufacture by id"                                                                
+                                                                                                                           
+ 21.  AssertionError  Status code name has string                                                                          
+                      expected response to have status reason 'OK' but got undefined                                       
+                      at assertion:2 in test-script                                                                        
+                      inside "Update the manufacture by id"                                                                
+                                                                                                                           
+ 22.  Error                                                                                                                
+                      getaddrinfo ENOTFOUND {{url}}                                                                        
+                      at request                                                                                           
+                      inside "Delete the manufacturer"                                                                     
+                                                                                                                           
+ 23.  AssertionError  Status code is 200                                                                                   
+                      expected { Object (id, _details, ...) } to have property 'code'                                      
+                      at assertion:0 in test-script                                                                        
+                      inside "Delete the manufacturer"                                                                     
+                                                                                                                           
+ 24.  AssertionError  Response time is less than 200ms                                                                     
+                      expected undefined to be a number or a date                                                          
+                      at assertion:1 in test-script                                                                        
+                      inside "Delete the manufacturer"                                                                     
+                                                                                                                           
+ 25.  AssertionError  Status code name has string                                                                          
+                      expected response to have status reason 'OK' but got undefined                                       
+                      at assertion:2 in test-script                                                                        
+                      inside "Delete the manufacturer"                                                                     
+                                                                                                                           
+ 26.  Error                                                                                                                
+                      getaddrinfo ENOTFOUND {{url}}                                                                        
+                      at request                                                                                           
+                      inside "check if manufacturer already exists"                                                        
+                                                                                                                           
+ 27.  AssertionError  Status code is 200                                                                                   
+                      expected { Object (id, _details, ...) } to have property 'code'                                      
+                      at assertion:0 in test-script                                                                        
+                      inside "check if manufacturer already exists"                                                        
+                                                                                                                           
+ 28.  AssertionError  Response time is less than 200ms                                                                     
+                      expected undefined to be a number or a date                                                          
+                      at assertion:1 in test-script                                                                        
+                      inside "check if manufacturer already exists"                                                        
+                                                                                                                           
+ 29.  AssertionError  Status code name has string                                                                          
+                      expected response to have status reason 'OK' but got undefined                                       
+                      at assertion:2 in test-script                                                                        
+                      inside "check if manufacturer already exists"                                                        
+                                                                                                                           
+ 30.  JSONError       Your test name                                                                                       
+                      Unexpected token u in JSON at position 0                                                             
+                      at assertion:3 in test-script                                                                        
+                      inside "check if manufacturer already exists"                                                        
+Build step 'Execute Windows batch command' marked build as failure
+Finished: FAILURE
