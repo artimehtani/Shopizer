@@ -1,0 +1,167 @@
+Started by user [8mha:////4Gu+7aA5jDkiFfpngZXal1oqojI5ys5EjQGp3hFIbswnAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\Merchant Store API
+[Merchant Store API] $ cmd /c call C:\Windows\TEMP\jenkins5891808016284351977.bat
+
+C:\Program Files (x86)\Jenkins\workspace\Merchant Store API>cd C:\Users\Arti Mehtani\AppData\Roaming\npm 
+
+C:\Users\Arti Mehtani\AppData\Roaming\npm>newman run https://www.getpostman.com/collections/95db36e0cf0696bd25ca 
+newman
+
+MERCHANT store
+
+→ Get all the stores
+  POST http://localhost:8080/api/v1/private/login [200 OK, 862B, 114ms]
+  GET http://localhost:8080/api/v1/private/stores [200 OK, 6.13KB, 99ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Check the value of Code
+  √  Check the value of name
+
+→ Create a store
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 19ms]
+  POST http://localhost:8080/api/v1/private/store [200 OK, 1.09KB, 41ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Successful POST request
+  √  Check the value in response 
+  √  Content-Type is present
+
+→ Check if store code already exists
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 17ms]
+  GET http://localhost:8080/api/v1/private/store/unique?code=TAAAR_RED [200 OK, 576B, 11ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Check if store exists
+
+→ get merchant store by code
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 34ms]
+  GET {{url}}/api/v1/store/TAAAR_RED [errored]
+     getaddrinfo ENOTFOUND {{url}}
+  2. Status code is 200
+  3. Response time is less than 200ms
+  4. Status code name has string
+  5. Check the value of code
+  6. Check admin name in response data
+
+→ Update a store
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 9ms]
+  PUT http://localhost:8080/api/v1/private/store/TAAAR_RED [200 OK, 1.08KB, 17ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Check the value of code
+  √  Body matches string
+
+→ Deletes a store by code
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 24ms]
+  DELETE http://localhost:8080/api/v1/private/store/TAAAR_RED [200 OK, 520B, 20ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+
+→ Get store branding and marketing details
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 11ms]
+  GET http://localhost:8080/api/v1/private/store/DEFAULT/marketing [200 OK, 769B, 27ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Your test name
+
+→ Create or save store branding and marketing details
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 14ms]
+  POST http://localhost:8080/api/v1/private/store/NVStore/marketing [201 Created, 525B, 36ms]
+  √  Status code name has string
+  √  Response time is less than 200ms
+  √  Successful POST request
+  √  Status code is 201
+
+→ Get the created marketing detailsfor store
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 10ms]
+  GET http://localhost:8080/api/v1/private/store/NVStore/marketing [200 OK, 666B, 11ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Your test name
+
+→ deletes the logo
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 19ms]
+  DELETE http://localhost:8080/api/v1/private/store/DEFAULT/marketing/logo [200 OK, 520B, 126ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+
+→ Create the store logo
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 8ms]
+  POST http://localhost:8080/api/v1/private/store/DEFAULT/marketing/logo [201 Created, 525B, 45ms]
+  √  Successful POST request
+  √  Response time is less than 200ms
+
+→  Get list of store names. Returns all retailers and stores
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 8ms]
+  GET http://localhost:8080/api/v1/stores [200 OK, 6.42KB, 38ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Check value of code in response array
+
+→ Get merchant retailer stores
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 12ms]
+  GET http://localhost:8080/api/v1/private/merchant/NEWDEFAULT/stores [200 OK, 636B, 17ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+
+┌─────────────────────────┬───────────────────┬──────────────────┐
+│                         │          executed │           failed │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              iterations │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│                requests │                26 │                1 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│            test-scripts │                26 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│      prerequest-scripts │                13 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              assertions │                49 │                5 │
+├─────────────────────────┴───────────────────┴──────────────────┤
+│ total run duration: 2.2s                                       │
+├────────────────────────────────────────────────────────────────┤
+│ total data received: 15.99KB (approx)                          │
+├────────────────────────────────────────────────────────────────┤
+│ average response time: 32ms [min: 8ms, max: 126ms, s.d.: 32ms] │
+└────────────────────────────────────────────────────────────────┘
+
+  #  failure         detail                                                          
+                                                                                     
+ 1.  Error                                                                           
+                     getaddrinfo ENOTFOUND {{url}}                                   
+                     at request                                                      
+                     inside "get merchant store by code"                             
+                                                                                     
+ 2.  AssertionError  Status code is 200                                              
+                     expected { Object (id, _details, ...) } to have property 'code' 
+                     at assertion:0 in test-script                                   
+                     inside "get merchant store by code"                             
+                                                                                     
+ 3.  AssertionError  Response time is less than 200ms                                
+                     expected undefined to be a number or a date                     
+                     at assertion:1 in test-script                                   
+                     inside "get merchant store by code"                             
+                                                                                     
+ 4.  AssertionError  Status code name has string                                     
+                     expected response to have status reason 'OK' but got undefined  
+                     at assertion:2 in test-script                                   
+                     inside "get merchant store by code"                             
+                                                                                     
+ 5.  JSONError       Check the value of code                                         
+                     Unexpected token u in JSON at position 0                        
+                     at assertion:3 in test-script                                   
+                     inside "get merchant store by code"                             
+                                                                                     
+ 6.  JSONError       Check admin name in response data                               
+                     Unexpected token u in JSON at position 0                        
+                     at assertion:4 in test-script                                   
+                     inside "get merchant store by code"                             
+Build step 'Execute Windows batch command' marked build as failure
+Finished: FAILURE

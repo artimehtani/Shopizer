@@ -1,0 +1,133 @@
+Started by user [8mha:////4Gu+7aA5jDkiFfpngZXal1oqojI5ys5EjQGp3hFIbswnAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\Merchant Store API
+[Merchant Store API] $ cmd /c call C:\Windows\TEMP\jenkins1430850335577214893.bat
+
+C:\Program Files (x86)\Jenkins\workspace\Merchant Store API>cd C:\Users\Arti Mehtani\AppData\Roaming\npm 
+
+C:\Users\Arti Mehtani\AppData\Roaming\npm>newman run https://www.getpostman.com/collections/95db36e0cf0696bd25ca 
+newman
+
+MERCHANT store
+
+→ Get all the stores
+  POST http://localhost:8080/api/v1/private/login [200 OK, 862B, 68ms]
+  GET http://localhost:8080/api/v1/private/stores [200 OK, 6.13KB, 17ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Check the value of Code
+  √  Check the value of name
+
+→ Create a store
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 20ms]
+  POST http://localhost:8080/api/v1/private/store [200 OK, 1.09KB, 27ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Successful POST request
+  √  Check the value in response 
+  √  Content-Type is present
+
+→ Check if store code already exists
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 9ms]
+  GET http://localhost:8080/api/v1/private/store/unique?code=TAAAR_RED [200 OK, 576B, 9ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Check if store exists
+
+→ get merchant store by code
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 28ms]
+  GET http://localhost:8080/api/v1/store/TAAAR_RED [200 OK, 939B, 13ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+  √  Check the value of code
+  √  Check admin name in response data
+
+→ Update a store
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 18ms]
+  PUT http://localhost:8080/api/v1/private/store/TAAAR_RED [200 OK, 1.08KB, 37ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Check the value of code
+  √  Body matches string
+
+→ Deletes a store by code
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 17ms]
+  DELETE http://localhost:8080/api/v1/private/store/TAAAR_RED [200 OK, 520B, 14ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+
+→ Get store branding and marketing details
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 9ms]
+  GET http://localhost:8080/api/v1/private/store/DEFAULT/marketing [200 OK, 769B, 10ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Your test name
+
+→ Create or save store branding and marketing details
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 17ms]
+  POST http://localhost:8080/api/v1/private/store/NVD/marketing [201 Created, 525B, 24ms]
+  √  Status code name has string
+  √  Response time is less than 200ms
+  √  Successful POST request
+  √  Status code is 201
+
+→ Get the created marketing detailsfor store
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 81ms]
+  GET http://localhost:8080/api/v1/private/store/NVD/marketing [200 OK, 666B, 20ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Your test name
+
+→ deletes the logo
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 14ms]
+  DELETE http://localhost:8080/api/v1/private/store/DEFAULT/marketing/logo [200 OK, 520B, 15ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+
+→ Create the store logo
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 18ms]
+  POST http://localhost:8080/api/v1/private/store/DEFAULT/marketing/logo [201 Created, 525B, 22ms]
+  √  Successful POST request
+  √  Response time is less than 200ms
+
+→  Get list of store names. Returns all retailers and stores
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 7ms]
+  GET http://localhost:8080/api/v1/stores [200 OK, 6.77KB, 8ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+  √  Check value of code in response array
+
+→ Get merchant retailer stores
+  POST http://localhost:8080/api/v1/private/login [200 OK, 787B, 22ms]
+  GET http://localhost:8080/api/v1/private/merchant/NEWDEFAULT/stores [200 OK, 636B, 17ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Body matches string
+
+┌─────────────────────────┬──────────────────┬──────────────────┐
+│                         │         executed │           failed │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              iterations │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│                requests │               26 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│            test-scripts │               26 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│      prerequest-scripts │               13 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              assertions │               49 │                0 │
+├─────────────────────────┴──────────────────┴──────────────────┤
+│ total run duration: 2.3s                                      │
+├───────────────────────────────────────────────────────────────┤
+│ total data received: 16.88KB (approx)                         │
+├───────────────────────────────────────────────────────────────┤
+│ average response time: 21ms [min: 7ms, max: 81ms, s.d.: 16ms] │
+└───────────────────────────────────────────────────────────────┘
+Finished: SUCCESS
