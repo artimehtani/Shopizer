@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9512e976-cde4-4b98-ba4d-abf1cab49bc7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Sprint 3 Shopizer" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bTrjzwrf7lhoEfoG1UOFTGrhB0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.46551725" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected="Application.MainClass">
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainClass" />
+      <module name="Sprint 3 Shopizer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Shopizer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint 3 Shopizer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Shopizer" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Shopizer.responsive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint 3 Shopizer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Shopizer" />
+      <option name="METHOD_NAME" value="responsive" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Shopizer.shippingMethods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint 3 Shopizer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Shopizer" />
+      <option name="METHOD_NAME" value="shippingMethods" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainClass" />
+        <item itemvalue="JUnit.Shopizer.shippingMethods" />
+        <item itemvalue="JUnit.Shopizer" />
+        <item itemvalue="JUnit.Shopizer.responsive" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9512e976-cde4-4b98-ba4d-abf1cab49bc7" name="Default Changelist" comment="" />
+      <created>1588667063909</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588667063909</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="3" key="#Project_Structure" timestamp="1588820233160">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="3" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1588820233160" />
+    <state x="382" y="152" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588670112564">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="382" y="152" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1588670112564" />
+    <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1588821954073">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1588821954073" />
+    <state width="1222" height="201" key="GridCell.Tab.0.bottom" timestamp="1588820696534">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1222" height="201" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588820696534" />
+    <state width="1222" height="201" key="GridCell.Tab.0.center" timestamp="1588820696533">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1222" height="201" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588820696533" />
+    <state width="1222" height="201" key="GridCell.Tab.0.left" timestamp="1588820696533">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1222" height="201" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588820696533" />
+    <state width="1222" height="201" key="GridCell.Tab.0.right" timestamp="1588820696533">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1222" height="201" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588820696533" />
+    <state width="1222" height="201" key="GridCell.Tab.1.bottom" timestamp="1588820696534">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1222" height="201" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588820696534" />
+    <state width="1222" height="201" key="GridCell.Tab.1.center" timestamp="1588820696534">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1222" height="201" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1588820696534" />
+    <state width="1222" height="201" key="GridCell.Tab.1.left" timestamp="1588820696534">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1222" height="201" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1588820696534" />
+    <state width="1222" height="201" key="GridCell.Tab.1.right" timestamp="1588820696534">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1222" height="201" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1588820696534" />
+    <state x="144" y="0" key="SettingsEditor" timestamp="1588822695972">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1588822695972" />
+    <state x="348" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1588822539035">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="348" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1588822539035" />
+    <state x="398" y="243" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588795295698">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="398" y="243" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.680@0.0.1280.680" timestamp="1588795295697" />
+    <state x="88" y="46" key="new project wizard" timestamp="1588823405422">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="88" y="46" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1588823405422" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1588667369141">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1588667369141" />
+  </component>
+</project>

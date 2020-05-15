@@ -1,0 +1,15 @@
+{
+  "name": "petclinic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tulasi Rao",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^4.4.0"
+  },
+  "dependencies": {},
+  "description": ""
+}

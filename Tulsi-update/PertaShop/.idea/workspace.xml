@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ba9e5a3d-5d23-4663-8236-7d408b77b6f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shopizer2" beforeDir="false" afterPath="$PROJECT_DIR$/../Shopizer2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprint 4" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="C:\Users\ITHS\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XvZReDgGCe6WjMUmUywZeOugSZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ITHS\SeleniumProject\PertaShop" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ITHS\SeleniumProject\PertaShop" />
+      <recent name="C:\Users\ITHS\SeleniumProject\PertaShop\src\test\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Pertashop.continueShopping">
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PrestaShop.MainClass" />
+      <module name="PrestaShop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PrestaShop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Pertashop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrestaShop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PrestaShop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PrestaShop" />
+      <option name="MAIN_CLASS_NAME" value="PrestaShop.Pertashop" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Pertashop.contactUs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrestaShop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PrestaShop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PrestaShop" />
+      <option name="MAIN_CLASS_NAME" value="PrestaShop.Pertashop" />
+      <option name="METHOD_NAME" value="contactUs" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Pertashop.continueShopping" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrestaShop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PrestaShop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PrestaShop" />
+      <option name="MAIN_CLASS_NAME" value="PrestaShop.Pertashop" />
+      <option name="METHOD_NAME" value="continueShopping" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Pertashop.exploreBackOffice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrestaShop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PrestaShop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PrestaShop" />
+      <option name="MAIN_CLASS_NAME" value="PrestaShop.Pertashop" />
+      <option name="METHOD_NAME" value="exploreBackOffice" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainClass" />
+      <item itemvalue="JUnit.Pertashop.contactUs" />
+      <item itemvalue="JUnit.Pertashop.exploreBackOffice" />
+      <item itemvalue="JUnit.Pertashop" />
+      <item itemvalue="JUnit.Pertashop.continueShopping" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Pertashop.continueShopping" />
+        <item itemvalue="JUnit.Pertashop" />
+        <item itemvalue="Application.MainClass" />
+        <item itemvalue="JUnit.Pertashop.exploreBackOffice" />
+        <item itemvalue="JUnit.Pertashop.contactUs" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba9e5a3d-5d23-4663-8236-7d408b77b6f7" name="Default Changelist" comment="" />
+      <created>1581928521103</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581928521103</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="3" key="#Project_Structure" timestamp="1583752232248">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="3" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1583752232248" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583753009454">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1583753009454" />
+    <state x="93" y="93" width="1095" height="495" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584346544918">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="93" width="1095" height="495" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1280.680@0.0.1280.680" timestamp="1584346544918" />
+    <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1589297033143">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1589297033143" />
+    <state width="1202" height="225" key="GridCell.Tab.0.bottom" timestamp="1589297628307">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="225" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1589297628307" />
+    <state width="1202" height="225" key="GridCell.Tab.0.center" timestamp="1589297628307">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="225" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1589297628307" />
+    <state width="1202" height="225" key="GridCell.Tab.0.left" timestamp="1589297628307">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="225" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1589297628307" />
+    <state width="1202" height="225" key="GridCell.Tab.0.right" timestamp="1589297628307">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="225" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1589297628307" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1584345995025">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584345995025" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1584345995025">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1584345995025" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1584345995025">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1584345995025" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1584345995025">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1584345995025" />
+    <state x="144" y="0" key="SettingsEditor" timestamp="1588923100599">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1588923100599" />
+    <state x="349" y="170" key="com.intellij.ide.util.TipDialog" timestamp="1589517010018">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="349" y="170" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1589517010018" />
+    <state x="346" y="0" width="588" height="680" key="find.popup" timestamp="1581934880547">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="346" y="0" width="588" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1581934880547" />
+    <state x="91" y="46" key="new project wizard" timestamp="1588667063799">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="91" y="46" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1588667063799" />
+    <state x="282" y="67" width="700" height="610" key="recent.locations.popup" timestamp="1582550621671">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="282" y="67" width="700" height="610" key="recent.locations.popup/0.0.1280.680@0.0.1280.680" timestamp="1582550621671" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1582326419603">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1582326419603" />
+  </component>
+</project>
